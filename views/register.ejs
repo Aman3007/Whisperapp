@@ -1,0 +1,49 @@
+<%-include('partials/header')%> 
+
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Register</h5>
+
+<form action="/register" method="POST">
+  <div class="mb-3 row">
+  <label for="username" class="col-sm-2 col-form-label">Name</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="name" name="name" placeholder="your Name">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label for="username" class="col-sm-2 col-form-label">User Name</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="username" name="username" placeholder="your Email">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label for="password" class="col-sm-2 col-form-label">Password</label>
+  <div class="col-sm-10 func">
+    <input type="password" class="form-control" id="password" name="password">
+     <button id="show" type="button"><ion-icon class="show" name="eye-off"></ion-icon></button>
+   <button id="hide" type="button"><ion-icon class="hide" name="eye-off"></ion-icon></button>
+  </div>
+</div>
+<div class="mb-3 row new">
+  <div class="col-sm-10">
+ <p id="success"></p>
+  <p id="error"></p>
+  </div>
+
+</div>
+<div class=" btn">
+  <button type="button" id="submit" class="button">Register</button>
+</div>
+</form>
+  </div>
+</div>
+<%-include('partials/footer')%> 
+
+<% if (alertMsg) { %>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      alert("<%= alertMsg %>");
+    });
+  </script>
+<% } %>

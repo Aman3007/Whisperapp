@@ -1,0 +1,225 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color: rgb(43, 42, 42);
+}
+
+.card{
+      width: 45rem;
+    height: 35rem;
+    color: black;
+    margin-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    justify-content: center;
+    background-color: rgb(173, 169, 169);
+}
+.card-body{
+    direction: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.card-title{
+    font-size: 2rem;
+    color: rgb(107, 17, 17);
+       display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+h6{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.func{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.secretbtn{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.secretbtn2{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-left: -2rem;
+}
+a{
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-left: 6rem;
+    padding: 2rem;
+}
+a:hover{ 
+    color: rgb(33, 36, 238);  
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+.fa-key{
+    font-size: 3rem; 
+}
+p{
+    display: flex;
+    justify-content: center;
+    color: rgb(10, 10, 10);
+    margin-left: 5%;
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+}
+.card-text2{
+    margin-left: -2rem;
+}
+
+.btn{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
+
+ background-color: rgb(173, 169, 169);
+ border-radius: 2%;
+}
+.btn:hover{
+     background-color: rgb(173, 169, 169);
+}
+ .button{
+  border-radius: 8%;
+   
+     padding: 0.5rem;
+    background-color: rgb(65, 165, 247);
+}
+.show{
+    font-size: 2rem;
+}
+#show {
+  width: 2.5rem;
+  background-color: transparent;
+  border: none;
+  
+  
+}
+.hide{
+       font-size: 2rem;
+display: none;
+}
+#hide {
+   
+    width: 2.5rem;
+background-color: transparent;
+ 
+  border: none;
+  display: none;
+}
+
+
+.new{
+   
+    height: 2rem;
+}
+#succes,#error{
+ 
+    display: flex;
+    justify-content: center;
+    color: Red;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    margin-right: -3rem;
+   
+}
+
+.button2{
+    width: 10rem;
+    border: none;
+    padding: 0.3rem;
+    background-color: black;
+    color: white;
+}
+.secretbtn3{
+     display: flex;
+justify-content: center;
+    margin-left: -6.5rem; 
+}
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  .card-body {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  .func, .secretbtn, .secretbtn2 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+
+  a {
+    font-size: 1.2rem;
+    margin-left: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .icon {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .card-text2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .button2 {
+    width: 100%;
+  }
+
+  .secretbtn3 {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+}
