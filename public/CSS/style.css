@@ -7,6 +7,8 @@ body{
     justify-content: center;
    background-color: rgb(43, 42, 42);
 }
+/* From Uiverse.io by stephakayyy */ 
+
 
 .card{
       width: 45rem;
@@ -71,6 +73,10 @@ a:hover{
     align-items: center;
     justify-content: center;
     margin-bottom: 5rem;
+}
+.usersecret {
+ margin-bottom: 0.8rem;
+ margin-top: -1.5rem;
 }
 .fa-key{
     font-size: 3rem; 

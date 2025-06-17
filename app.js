@@ -3,13 +3,16 @@ const express = require("express")
 const bodyparser = require("body-parser")
 const ejs =require ("ejs")
 const mongoose = require("mongoose")
-const encrypt = require("mongoose-encryption")
 
+const cookieparser = require("cookie-parser");
+const  verifyAuthenticationToken  = require("./middelware.js/auth-middelware.js");
 const app = express();
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(bodyparser.urlencoded({ extended: true }))
-
+app.use(cookieparser()); 
+app.use(express.json());
+app.use(verifyAuthenticationToken)
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -17,15 +20,7 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log("MongoDB connected"))
 .catch((err) => console.error("MongoDB connection error:", err));
 
-const enterSchema = new mongoose.Schema({
-    Name:String,
-    user_name: String,
-    password:String,
-    secrets:[String]
-})
-const secret ="Amankijaiho";
-enterSchema.plugin(encrypt,{secret:secret,encryptedFields:["password"]})
-const item = mongoose.model("info", enterSchema)
+const { item } = require("./Model/User.js");
 
 app.get("/",(req,res)=>{
     res.render("home")
@@ -89,7 +84,25 @@ else{
       if(user){
 
         if(user.password===password){
-          res.render("secrets",{exej:user})
+         
+        const token = await user.generateToken();
+        res.cookie("access_token", token, {
+          httpOnly: true,
+          secure: false,
+          sameSite: "Lax",
+          maxAge: 7 * 24 * 60 * 60 * 1000,
+        })
+
+        
+         res.render("secrets", {
+            exej: {
+               id: user._id,
+               name:user.Name,
+             email: user.user_name,
+       
+            secrets:user.secrets
+                   }, token: token
+                                });
         }
        else{
                res.render("login",{alertMsg:"Your password does not match please try again "})
