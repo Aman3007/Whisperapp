@@ -43,6 +43,7 @@ Create a `.env` file in `server/` and add:
 ```
 
 MONGO_URI=your_mongodb_uri
+JWT_SECURE_KEY=secure_keywords;
 
 ```
 Start the backend:
