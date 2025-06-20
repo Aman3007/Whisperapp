@@ -13,7 +13,8 @@ enterSchema.plugin(encrypt,{secret:secret,encryptedFields:["password"]})
 enterSchema.methods.generateToken=async function(){
     try {
         return jwt.sign({
-            userid:this._id.toString(),
+            id:this._id.toString(),
+            name:this.Name,
             username:this.user_name,
             usersecret:this.secrets
           
@@ -23,7 +24,7 @@ enterSchema.methods.generateToken=async function(){
         })
        
     } catch (error) {
-        console.log("error")
+        console.error(error);
     }
 }
 

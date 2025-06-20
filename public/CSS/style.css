@@ -20,6 +20,7 @@ body{
    align-items: center;
     justify-content: center;
     background-color: rgb(173, 169, 169);
+    box-shadow: 5px 5px 5px white;
 }
 .card-body{
     direction: flex;
@@ -44,7 +45,14 @@ h6{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
+}
+.secret-add{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3rem;
 }
 .secretbtn{
     display: flex;
@@ -77,7 +85,9 @@ a:hover{
 .usersecret {
  margin-bottom: 0.8rem;
  margin-top: -1.5rem;
+ padding-right: 2rem;
 }
+
 .fa-key{
     font-size: 3rem; 
 }
@@ -159,9 +169,18 @@ background-color: transparent;
 }
 .secretbtn3{
      display: flex;
+     align-items: center;
 justify-content: center;
-    margin-left: -6.5rem; 
+    padding-top: 2rem;
 }
+.logout{
+  margin: 0;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: lightskyblue;
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;
