@@ -135,7 +135,7 @@ res.set({
         Name: user.Name,
         email: user.user_name,
         secrets: user.secrets,
-      },
+      },alertMsg:null
     });
   } catch (error) {
     console.error(error);
@@ -174,10 +174,14 @@ res.set({
      const  secret=req.body.secret;
           const user = await item.findById(req.user.id);
     if (!user) return res.redirect("/login?alert=you are not logged in");
+
+    if(!secret||secret.trim()===""){
+      return res.render("secrets",{exej:user,alertMsg:"empty secret can not be added"})
+    }
     await item.updateOne({_id:req.user.id},{$push:{secrets:secret}})
   
     const  mysecret = await item.findOne({_id:req.user.id})
-         res.render("secrets",{exej:mysecret})
+         res.render("secrets",{exej:mysecret,alertMsg:null})
 
 }
  catch (error) {
