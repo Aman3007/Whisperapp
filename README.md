@@ -1,4 +1,4 @@
-"You can see how the application works by visiting this URL:https://whisperapp.onrender.com "
+"You can see how the application works by visiting this URL:https://whisperapp.onrender.com"
 
 
 Project Title
@@ -9,12 +9,14 @@ A full-stack web application built using ejs, Node.js, Express, and MongoDB . wh
 Project Structure
 client/ → ejs frontend
 server/ → Express backend
+
 README.md → This file
 Features
 - 📝 Simple form for adding the login,logout amd adding the secret
 - 📦 MongoDB for database management
 - 📄 CRUD operation using Express
 - 🔧 Mongoose for schema & data modeling
+- -Authentication and Authorization using jwt(jsonwebtoken) ,cookies;
 Tech Stack
 Frontend:
 - ejs
@@ -41,6 +43,7 @@ Create a `.env` file in `server/` and add:
 ```
 
 MONGO_URI=your_mongodb_uri
+JWT_SECURE_KEY=secure_keywords;
 
 ```
 Start the backend:
