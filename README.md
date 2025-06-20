@@ -16,7 +16,8 @@ Features
 - 📦 MongoDB for database management
 - 📄 CRUD operation using Express
 - 🔧 Mongoose for schema & data modeling
-- -Authentication and Authorization using jwt(jsonwebtoken) ,cookies;
+- -Authentication and Authorization using jwt(jsonwebtoken) ,cookies,cache;
+- 
 Tech Stack
 Frontend:
 - ejs
@@ -30,7 +31,7 @@ Installation
 1. Clone the repository
 ```
 git clone https://github.com/Aman3007/Whisperapp.git
-cd repo-name
+cd Whisperapp
 ```
 
 2. Set up the backend
@@ -39,7 +40,7 @@ npm init -y
 npm i all-dependencies     // you can see package.json file
 
 ```
-Create a `.env` file in `server/` and add:
+Create a `.env` file  and add:
 ```
 
 MONGO_URI=your_mongodb_uri
