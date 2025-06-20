@@ -105,16 +105,11 @@ p{
 
 .btn{   
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 0rem;
+    border:0;
 
- background-color: rgb(173, 169, 169);
- border-radius: 2%;
 }
-.btn:hover{
-     background-color: rgb(173, 169, 169);
-}
+
  .button{
   border-radius: 8%;
    
