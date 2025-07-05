@@ -62,7 +62,7 @@ try {
             password:password
         })
        
-         res.render("login",{alertMsg:null})
+         res.render("login",{alertMsg:"successfully Register You can now Login..."})
       }
 }
 catch (error) {
