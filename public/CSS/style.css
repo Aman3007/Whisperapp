@@ -1,8 +1,14 @@
-body{
+*{
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
    background-color: rgb(43, 42, 42);
@@ -12,9 +18,11 @@ body{
 
 .card{
       width: 45rem;
-    height: 35rem;
+    min-height: 35rem;
+    max-height: fit-content;
     color: black;
     margin-top: 2rem;
+    margin-bottom: 6rem;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -82,11 +90,21 @@ a:hover{
     justify-content: center;
     margin-bottom: 5rem;
 }
-.usersecret {
- margin-bottom: 0.8rem;
- margin-top: -1.5rem;
- padding-right: 2rem;
+.headsec{
+  margin-top: -3rem;
+  margin-left: -1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: -1.4rem;
+    color: rgb(2, 2, 2);
+  text-shadow: 2px 2px 2px rgb(248, 9, 9);
 }
+.usersecret {
+  margin-bottom: 0.5rem;
+  margin-left: -2.5rem;
+  color: rgb(243, 239, 239);
+  text-shadow: 5px 5px 5px rgb(24, 23, 23);
+}
+
 
 .fa-key{
     font-size: 3rem; 
@@ -94,21 +112,33 @@ a:hover{
 p{
     display: flex;
     justify-content: center;
-    color: rgb(10, 10, 10);
-    margin-left: 5%;
+    color: rgb(253, 253, 253);
+
     font-size: 1.6rem;
     margin-bottom: 5rem;
 }
 .card-text2{
     margin-left: -2rem;
 }
+.personal{
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
 
+  text-align: center;
+}
 .btn{   
     display: flex;
+    flex-direction: row;
+  align-items: center;
     justify-content: center;
-    border:0;
-
+    padding-left: 3.5rem;
+border: 0;  
 }
+.home-login{
+  font-size: 1.6rem;
+ 
+}
+
 
  .button{
   border-radius: 8%;
@@ -167,6 +197,7 @@ background-color: transparent;
      align-items: center;
 justify-content: center;
     padding-top: 2rem;
+    margin-bottom: 4rem;
 }
 .logout{
   margin: 0;
