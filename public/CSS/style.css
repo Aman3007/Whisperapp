@@ -64,6 +64,8 @@ h6{
 }
 .secretbtn{
     display: flex;
+    align-items: center;
+
     flex-direction: row;
     gap: 3rem;
 }
@@ -73,6 +75,7 @@ h6{
     gap: 2rem;
     margin-left: -2rem;
 }
+
 a{
     color: white;
     font-size: 2rem;
@@ -207,7 +210,7 @@ justify-content: center;
   background-color: lightskyblue;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px ) {
   body {
     flex-direction: column;
     padding: 1rem;
@@ -235,11 +238,18 @@ justify-content: center;
     font-size: 1rem;
   }
 
-  .func, .secretbtn, .secretbtn2 {
+  .func, .secretbtn2 {
+    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 0.5rem;
     margin-left: 0;
+  }
+  .secretbtn{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+   
   }
 
   a {
@@ -273,12 +283,13 @@ justify-content: center;
     align-items: center;
     margin-left: 0;
   }
+  
 
   .button2{
     width: 10rem;
 margin-left: -2rem;
   }
-  #secret{
+  #users-secret{
       width: 10rem;
       margin-left: -2rem;
   }
