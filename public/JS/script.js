@@ -12,6 +12,8 @@ function isPassword(password) {
 
 
 $(document).ready( () =>{
+let isEditing = false;
+let currentEditIndex = null;
 
 var errormessage = "";
 
@@ -62,6 +64,69 @@ $("#hide").click(()=> {
     $(".show").css("display", "inline")
 
 })
+$(document).on('click', '.edit-btn', function () {
+  const secretText = $(this).attr('data-secret');
+  const secretIndex = $(this).attr('data-index');
+
+  console.log("Editing:", secretText);
+
+  $('#users-secret').val(secretText); // Make sure this matches the id of your input
+  $('#submitSecret').text("Update");
+  $('#editIndex').val(secretIndex);
+
+  isEditing = true;
+  currentEditIndex = secretIndex;
 });
+
+
+
+// Handle Form Submission
+$('#secretForm').on('submit', function (e) {
+  e.preventDefault(); // prevent default form
+
+  const secret = $('#users-secret').val();
+
+  if (!secret) return;
+
+  if (isEditing) {
+    // Send PUT request
+    const index = $('#editIndex').val();
+    console.log(index)
+
+    $.ajax({
+      url: `/secrets/${index}`,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: JSON.stringify({ secret }),
+  
+      success: function () {
+        location.reload(); 
+      },
+      error: function (err) {
+        alert("Failed to update secret.");
+      }
+     });
+  } else {
+    // Normal POST for adding new secret
+    $.ajax({
+      url: '/secrets',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ secret }),
+      success: function () {
+        location.reload();
+      },
+      error: function (err) {
+        alert("Failed to add secret.");
+      }
+    });
+  }
+});
+
+
+
+});
+
+
 
 

@@ -190,7 +190,24 @@ res.set({
 }
 )
 
+app.put('/secrets/:index', verifyAuthenticationToken,async (req, res) => {
+ const index = parseInt(req.params.index);
+  const { secret } = req.body;
+console.log(index+"" +secret)
+  const user = await item.findById(req.user.id);
 
+  if (!user || !user.secrets || index < 0 || index >= user.secrets.length) {
+    return res.status(400).send("Invalid secret index.");
+  }
+
+ await item.updateOne(
+  { _id: req.user.id },
+  { $set: { [`secrets.${index}`]: secret } }
+);
+       res.status(200).json({ message: "Secret updated successfully" });
+
+
+});
 app.listen(3000, () => {
     console.log("server started")
 })
