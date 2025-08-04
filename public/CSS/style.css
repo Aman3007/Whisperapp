@@ -26,6 +26,7 @@ body,html{
     color: black;
     margin-top: 2rem;
     margin-bottom: 6rem;
+    overflow-x: hidden;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -205,6 +206,13 @@ justify-content: center;
     padding-top: 2rem;
     margin-bottom: 4rem;
 }
+
+.secret-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 .logout{
   margin: 0;
   padding: 0.5rem;
@@ -217,6 +225,7 @@ justify-content: center;
   body {
     flex-direction: column;
     padding: 1rem;
+    overflow-x: hidden;
   }
 
   .card {
@@ -224,6 +233,7 @@ justify-content: center;
     height: auto;
     margin-top: 1rem;
     padding: 1rem;
+    overflow-x: hidden;
   }
 
   .card-body {
