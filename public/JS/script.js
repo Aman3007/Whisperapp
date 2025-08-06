@@ -17,36 +17,34 @@ let currentEditIndex = null;
 
 var errormessage = "";
 
-$("#submit").click(()=> {
+$("form").on("submit", function (e) {
   var email = $("#username").val();
   var password = $("#password").val();
- 
-  if (!email || !password ) {
-    errormessage = "<p>Please fill all the Fields</p>"
-    $("#error").html(errormessage)
+
+  if (!email || !password) {
+    e.preventDefault();
+    $("#error").html("<p>Please fill all the fields</p>");
+    return;
   }
 
-  else if (!isEmail(email)) {
-    errormessage = ("<p>Please add a valid E-mail</p>")
-    $("#success").html("")
-    $("#error").html(errormessage)
-
+  if (!isEmail(email)) {
+    e.preventDefault();
+    $("#error").html("<p>Please enter a valid email</p>");
+    $("#success").html("");
+    return;
   }
 
-  else if (!isPassword(password)) {
-    errormessage = ("<p>Please add a Password(minimum length 6,at least 1 uppercase letter,at least 1 lowercase letter, at lease 1 number and no special character)</p>")
-    $("#success").html("")
-    $("#error").html(errormessage)
+  if (!isPassword(password)) {
+    e.preventDefault();
+    $("#error").html("<p>Password must be 6–12 characters, include at least 1 uppercase letter and 1 number</p>");
+    $("#success").html("");
+    return;
   }
 
-  else {
-    $("#error").html("")
-   $("#submit").attr("type","submit")
+  // If all is valid, clear errors and allow submission
+  $("#error").html("");
+});
 
-  }
-
-
-})
 
 $("#show").click(()=> {
   $("#password").attr("type", "text")
