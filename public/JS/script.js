@@ -17,7 +17,7 @@ let currentEditIndex = null;
 
 var errormessage = "";
 
-$("form").on("submit", function (e) {
+$("form#register-form").on("submit", function (e) {
   var email = $("#username").val();
   var password = $("#password").val();
 
